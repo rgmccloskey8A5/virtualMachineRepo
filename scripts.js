@@ -1,19 +1,18 @@
 document.getElementById("clickBtn").addEventListener("click", function () {
   const messages = [
-    "Snoopy does a happy dance!",
-    "<img src='dancingSnoopy.png' class='msg-img'>",
-    "Charlie Brown sighs...",
-    "<img src='charlieBrown.png' class='msg-img'>",
-    "Linus drops his blanket in surprise!",
-    "<img src='linus.png' class='msg-img'>",
-    "Lucy charges 5 cents for advice.",
-    "<img src='lucy.png' class='msg-img'>",
-    "Woodstock chirps excitedly!",
-    "<img src='woodstock.png' class='msg-img'>"
+    { text: "Snoopy does a happy dance!", image: "dancingSnoopy.png" },
+    { text: "Charlie Brown sighs...", image: "charlieBrown.png" },
+    { text: "Linus drops his blanket in surprise!", image: "linus.png" },
+    { text: "Lucy charges 5 cents for advice.", image: "lucy.png" },
+    { text: "Woodstock chirps excitedly!", image: "woodstock.png" }
   ];
 
-  document.getElementById("message").innerHTML =
-    messages[Math.floor(Math.random() * messages.length)];
+  const randomMsg = messages[Math.floor(Math.random() * messages.length)];
+
+  document.getElementById("message").innerHTML = `
+    <p>${randomMsg.text}</p>
+    <img src="${randomMsg.image}" class="msg-img">
+  `;
 });
 
 
